@@ -8,6 +8,55 @@
 This project is a ResNet-based image classification system for the NYCU Computer Vision 2026 Homework 1 competition.  
 The final method uses two ResNet-50 models with different random seeds and one ResNet-101 model, followed by test-time augmentation and logit averaging ensemble.
 
+Project structure:
+
+```text
+Deep Learning/
+├── data/
+│   ├── train/
+│   │   ├── 0/
+│   │   ├── 1/
+│   │   ├── ...
+│   │   └── 99/
+│   ├── val/
+│   │   ├── 0/
+│   │   ├── 1/
+│   │   ├── ...
+│   │   └── 99/
+│   └── test/
+│       ├── *.jpg
+│       └── ...
+└── hw1/
+    ├── README.md
+    ├── requirements.txt
+    ├── train.py
+    ├── infer.py
+    ├── .flake8
+    └── Performance_Snapshot.png
+```
+
+The training and inference commands in this repository assume the following relative layout:
+
+```text
+../data
+```
+
+Repository files:
+
+```text
+hw1/
+├── README.md
+├── requirements.txt
+├── train.py
+├── infer.py
+├── .flake8
+└── Performance_Snapshot.png
+```
+
+Dataset source:
+
+[Google Drive Download Link](https://drive.google.com/file/d/1vxiXJHUo6ZPGxBGXwrsSutOpqfJ6HN9D/view?usp=sharing)
+
 ## Environment Setup
 
 Create and activate your environment, then install the required packages:
