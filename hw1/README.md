@@ -1,11 +1,11 @@
-# NYCU Introduction to Generative AI: From Theory to Application 2026 HW1
+# NYCU Selected Topics in Visual Recognition using Deep Learning 2026 HW1
 
 - Student ID: `110654013`
 - Name: `簡惟捷`
 
 ## Introduction
 
-This project is a ResNet-based image classification system for the NYCU Computer Vision 2026 Homework 1 competition.  
+This project is a ResNet-based image classification system for the NYCU Selected Topics in Visual Recognition using Deep Learning 2026 Homework 1 competition.  
 The final method uses two ResNet-50 models with different random seeds and one ResNet-101 model, followed by test-time augmentation and logit averaging ensemble.
 
 Project structure:
