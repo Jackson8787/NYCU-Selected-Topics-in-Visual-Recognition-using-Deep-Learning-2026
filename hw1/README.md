@@ -48,7 +48,6 @@ hw1/
 ├── requirements.txt
 ├── train.py
 ├── infer.py
-├── .flake8
 └── Performance_Snapshot.png
 ```
 
