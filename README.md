@@ -1,1 +1,1 @@
-# NYCU Introduction to Generative AI: From Theory to Application 2026
+# NYCU Selected Topics in Visual Recognition using Deep Learning 2026
