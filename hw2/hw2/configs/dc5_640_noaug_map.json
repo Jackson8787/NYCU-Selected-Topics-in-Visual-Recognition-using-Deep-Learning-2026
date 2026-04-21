@@ -1,0 +1,32 @@
+{
+  "data_dir": "nycu-hw2-data",
+  "output_dir": "outputs/dc5_640_noaug_map",
+  "model_name": "facebook/detr-resnet-50-dc5",
+  "num_labels": 10,
+  "num_queries": 100,
+  "shortest_edge": 640,
+  "longest_edge": 1024,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "num_workers": 4,
+  "persistent_workers": true,
+  "prefetch_factor": 4,
+  "epochs": 8,
+  "learning_rate": 0.0001,
+  "backbone_learning_rate": 0.00001,
+  "weight_decay": 0.0001,
+  "max_grad_norm": 0.1,
+  "scheduler": "cosine",
+  "warmup_ratio": 0.05,
+  "min_lr_factor": 0.05,
+  "seed": 42,
+  "eval_every": 1,
+  "best_metric": "map",
+  "map_batch_size": 1,
+  "map_score_threshold": 0.001,
+  "map_max_detections_per_image": 50,
+  "amp": false,
+  "augmentation": {
+    "color_jitter": false
+  }
+}
