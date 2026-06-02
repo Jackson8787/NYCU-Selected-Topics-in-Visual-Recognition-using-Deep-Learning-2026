@@ -40,7 +40,7 @@ Public leaderboard result:
 ## Project Structure
 
 ```text
-hw4_github/
+hw4/
 |-- README.md
 |-- requirements.txt
 |-- .gitignore
