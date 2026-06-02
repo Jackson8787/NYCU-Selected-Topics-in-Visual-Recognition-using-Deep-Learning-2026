@@ -88,9 +88,6 @@ Install the required packages:
 
 Place the released archive in the project root, then extract and validate it:
 
-```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" scripts/prepare_data.py
-```
 
 This command extracts the release ZIP and verifies:
 
