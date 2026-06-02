@@ -75,7 +75,7 @@ GitHub package.
 Install the required packages:
 
 ```powershell
-&  pip install -r requirements.txt
+& python pip install -r requirements.txt
 ```
 
 ## Data Setup
@@ -136,13 +136,13 @@ This was the method that reached the final public score of **30.40**.
 Run a quick GPU forward/backward check:
 
 ```powershell
-& smoke_test.py --batch-size 4 --patch-size 128
+& python smoke_test.py --batch-size 4 --patch-size 128
 ```
 
 ### Train the Baseline PromptIR Branch
 
 ```powershell
-& train.py `
+& python train.py `
   --train-all `
   --patch-size 192 `
   --batch-size 4 `
@@ -160,7 +160,7 @@ Run a quick GPU forward/backward check:
 ### Train the Reference-Style Branch
 
 ```powershell
-& train.py `
+& python train.py `
   --patch-size 128 `
   --batch-size 4 `
   --epochs 150 `
@@ -183,7 +183,7 @@ Run a quick GPU forward/backward check:
 ### Generate the Final Ensemble Submission
 
 ```powershell
-& infer_weighted_ensemble.py `
+& python infer_weighted_ensemble.py `
   --checkpoint-a outputs/trainall192_mse_wd0_const2p5e7_snoww2p0_from_v4/checkpoints/best.pt `
   --checkpoint-b outputs/ref_full_l1psnrssimp_vgg16_150ep/checkpoints/best.pt `
   --weight-b 0.35 `
