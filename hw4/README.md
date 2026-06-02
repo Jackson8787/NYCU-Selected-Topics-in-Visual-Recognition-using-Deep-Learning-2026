@@ -136,13 +136,13 @@ This was the method that reached the final public score of **30.40**.
 Run a quick GPU forward/backward check:
 
 ```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" scripts/smoke_test.py --batch-size 4 --patch-size 128
+& smoke_test.py --batch-size 4 --patch-size 128
 ```
 
 ### Train the Baseline PromptIR Branch
 
 ```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" scripts/train.py `
+& train.py `
   --train-all `
   --patch-size 192 `
   --batch-size 4 `
@@ -160,7 +160,7 @@ Run a quick GPU forward/backward check:
 ### Train the Reference-Style Branch
 
 ```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" scripts/train.py `
+& train.py `
   --patch-size 128 `
   --batch-size 4 `
   --epochs 150 `
@@ -183,7 +183,7 @@ Run a quick GPU forward/backward check:
 ### Generate the Final Ensemble Submission
 
 ```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" scripts/infer_weighted_ensemble.py `
+& infer_weighted_ensemble.py `
   --checkpoint-a outputs/trainall192_mse_wd0_const2p5e7_snoww2p0_from_v4/checkpoints/best.pt `
   --checkpoint-b outputs/ref_full_l1psnrssimp_vgg16_150ep/checkpoints/best.pt `
   --weight-b 0.35 `
@@ -196,11 +196,3 @@ The final ZIP will be created as:
 ```text
 outputs/neural_ensemble_mse_snoww2p0_refmirror_wb035_tta/hw4_promptir_weighted_ensemble_submission.zip
 ```
-
-## Notes
-
-- This repository focuses on the final legal competition pipeline.
-- The code package does not include the released dataset or large local training
-  outputs.
-- Training progress is shown in the terminal with `tqdm`, including epoch,
-  batch, loss, learning rate, validation PSNR, and checkpoint updates.
