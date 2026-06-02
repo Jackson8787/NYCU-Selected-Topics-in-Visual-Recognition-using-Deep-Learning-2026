@@ -142,52 +142,52 @@ python smoke_test.py --batch-size 4 --patch-size 128
 ### Train the Baseline PromptIR Branch
 
 ```powershell
-python train.py `
-  --train-all `
-  --patch-size 192 `
-  --batch-size 4 `
-  --accumulation-steps 2 `
-  --learning-rate 2.5e-7 `
-  --weight-decay 0 `
-  --scheduler constant `
-  --loss mse `
-  --rain-weight 1.0 `
-  --snow-weight 2.0 `
-  --init-checkpoint outputs/trainall192_mse_wd0_const2p5e7_1ep_from_constbest_v4/checkpoints/best.pt `
+python train.py \
+  --train-all \
+  --patch-size 192 \
+  --batch-size 4 \
+  --accumulation-steps 2 \
+  --learning-rate 2.5e-7 \
+  --weight-decay 0 \
+  --scheduler constant \
+  --loss mse \
+  --rain-weight 1.0 \
+  --snow-weight 2.0 \
+  --init-checkpoint outputs/trainall192_mse_wd0_const2p5e7_1ep_from_constbest_v4/checkpoints/best.pt \
   --output-dir outputs/trainall192_mse_wd0_const2p5e7_snoww2p0_from_v4
 ```
 
 ### Train the Reference-Style Branch
 
 ```powershell
-python train.py `
-  --patch-size 128 `
-  --batch-size 4 `
-  --epochs 150 `
-  --learning-rate 2e-4 `
-  --weight-decay 1e-4 `
-  --scheduler onecycle `
-  --onecycle-pct-start 0.1 `
-  --onecycle-div-factor 25 `
-  --onecycle-final-div-factor 10000 `
-  --loss l1_psnr_ssim_perceptual `
-  --psnr-weight 0.1 `
-  --ssim-weight 0.1 `
-  --perceptual-weight 0.01 `
-  --perceptual-backbone vgg16 `
-  --perceptual-layer-preset reference `
-  --no-amp `
+python train.py \
+  --patch-size 128 \
+  --batch-size 4 \
+  --epochs 150 \
+  --learning-rate 2e-4 \
+  --weight-decay 1e-4 \
+  --scheduler onecycle \
+  --onecycle-pct-start 0.1 \
+  --onecycle-div-factor 25 \
+  --onecycle-final-div-factor 10000 \
+  --loss l1_psnr_ssim_perceptual \
+  --psnr-weight 0.1 \
+  --ssim-weight 0.1 \
+  --perceptual-weight 0.01 \
+  --perceptual-backbone vgg16 \
+  --perceptual-layer-preset reference \
+  --no-amp \
   --output-dir outputs/ref_full_l1psnrssimp_vgg16_150ep
 ```
 
 ### Generate the Final Ensemble Submission
 
 ```powershell
-python infer_weighted_ensemble.py `
-  --checkpoint-a outputs/trainall192_mse_wd0_const2p5e7_snoww2p0_from_v4/checkpoints/best.pt `
-  --checkpoint-b outputs/ref_full_l1psnrssimp_vgg16_150ep/checkpoints/best.pt `
-  --weight-b 0.35 `
-  --tta `
+python infer_weighted_ensemble.py \
+  --checkpoint-a outputs/trainall192_mse_wd0_const2p5e7_snoww2p0_from_v4/checkpoints/best.pt \
+  --checkpoint-b outputs/ref_full_l1psnrssimp_vgg16_150ep/checkpoints/best.pt \
+  --weight-b 0.35 \
+  --tta \
   --output-dir outputs/neural_ensemble_mse_snoww2p0_refmirror_wb035_tta
 ```
 
