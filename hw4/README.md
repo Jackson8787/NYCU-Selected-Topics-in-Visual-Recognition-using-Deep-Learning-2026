@@ -26,8 +26,7 @@ References:
 
 - PromptIR official repository:
   [va1shn9v/PromptIR](https://github.com/va1shn9v/PromptIR)
-- Homework 4 reference implementation:
-  [solocat17/NYCU-DLCV/Lab4](https://github.com/solocat17/NYCU-DLCV/tree/main/Lab4)
+
 
 ## Performance Snapshot
 
@@ -72,16 +71,11 @@ GitHub package.
 
 ## Environment Setup
 
-The experiments were run with the existing conda environment:
-
-```powershell
-C:\Users\o1000\anaconda3\envs\fuckyou\python.exe
-```
 
 Install the required packages:
 
 ```powershell
-& "C:\Users\o1000\anaconda3\envs\fuckyou\python.exe" -m pip install -r requirements.txt
+&  pip install -r requirements.txt
 ```
 
 ## Data Setup
