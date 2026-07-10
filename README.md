@@ -3,7 +3,6 @@
 Coursework portfolio for **Selected Topics in Visual Recognition using Deep Learning** at National Yang Ming Chiao Tung University (NYCU), 2026.
 
 - Student ID: `110654013`
-- Name: `簡惟捷`
 - Framework: PyTorch / Torchvision
 - Language: Python
 
